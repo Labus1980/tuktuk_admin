@@ -4,10 +4,12 @@
 
 [build.environment]
   NODE_VERSION = "20"
-  VITE_SUPABASE_URL = "your_supabase_url"
-  VITE_SUPABASE_ANON_KEY = "your_supabase_anon_key"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200 
+  status = 200
+
+[context.production.environment]
+  VITE_SUPABASE_URL = "your-supabase-url"
+  VITE_SUPABASE_ANON_KEY = "your-supabase-anon-key" 

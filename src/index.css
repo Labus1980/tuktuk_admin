@@ -1,28 +1,117 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import '@unocss/reset/tailwind.css';
 
-@layer base {
-  body {
-    @apply bg-gradient-to-br from-cyan-500 to-blue-600 min-h-screen;
-  }
+:root {
+  --primary-color: #00A3FF;
+  --secondary-color: #0F172A;
+  --primary-light: #E6F7FF;
+  --secondary-light: #1E293B;
 }
 
-@layer components {
-  .btn {
-    @apply px-4 py-2 rounded-md font-medium transition-colors;
-  }
-  
-  .btn-primary {
-    @apply bg-primary text-white hover:bg-primary/90;
-  }
-  
-  .btn-secondary {
-    @apply bg-secondary text-white hover:bg-secondary/90;
-  }
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  color: var(--secondary-color);
 }
 
+/* Базовые стили для кнопок */
+.btn {
+  @apply px-4 py-2 rounded-lg transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply btn bg-primary text-white hover:bg-primary-dark;
+}
+
+.btn-secondary {
+  @apply btn bg-secondary text-white hover:bg-secondary-dark;
+}
+
+/* Стили для форм */
+.form-input {
+  @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary-light;
+}
+
+/* Стили для карточек */
+.card {
+  @apply bg-white rounded-xl shadow-soft p-6;
+}
+
+/* Стили для модальных окон */
+.modal {
+  @apply fixed inset-0 bg-black/50 flex items-center justify-center;
+}
+
+.modal-content {
+  @apply bg-white rounded-xl shadow-soft p-6 max-w-lg w-full mx-4;
+}
+
+/* Стили для таблиц */
+.table {
+  @apply w-full border-collapse;
+}
+
+.table th {
+  @apply bg-gray-50 text-left p-4 font-medium text-gray-500;
+}
+
+.table td {
+  @apply p-4 border-t border-gray-200;
+}
+
+/* Стили для текста */
+h1 {
+  @apply text-3xl font-bold text-gray-900;
+}
+
+h2 {
+  @apply text-2xl font-semibold text-gray-800;
+}
+
+h3 {
+  @apply text-xl font-medium text-gray-700;
+}
+
+/* Стили для ссылок */
+a {
+  @apply text-primary hover:text-primary-dark transition-colors duration-200;
+}
+
+/* Стили для бейджей */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-error {
+  @apply bg-red-100 text-red-800;
+}
+
+/* Стили для загрузчиков */
+.loading {
+  @apply animate-spin rounded-full border-4 border-gray-200 border-t-primary h-8 w-8;
+}
+
+/* Стили для уведомлений */
+.notification {
+  @apply fixed bottom-4 right-4 p-4 rounded-lg shadow-lg max-w-sm;
+}
+
+.notification-success {
+  @apply bg-green-50 text-green-800 border border-green-200;
+}
+
+.notification-error {
+  @apply bg-red-50 text-red-800 border border-red-200;
+}
+
+/* Стили для размытия */
 .bg-blur {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  @apply backdrop-blur-md bg-white/80;
 } 

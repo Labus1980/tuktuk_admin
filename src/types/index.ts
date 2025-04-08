@@ -2,10 +2,9 @@ export interface Client {
   id: string
   name: string
   email?: string
-  phone?: string | null
-  address?: string | null
-  passport_number?: string | null
-  driver_license_number?: string
+  phone: string
+  passport_number: string
+  address: string
   deal_number?: string | null
   tariff?: string | null
   amo_deal_id?: string | null
@@ -17,8 +16,8 @@ export interface Client {
   rental_end_date?: string | null
   rental_end_date_normal?: string
   payment_date?: string | null
-  created_at: string
-  updated_at: string
+  created_at?: string
+  updated_at?: string
 }
 
 export interface Vehicle {
