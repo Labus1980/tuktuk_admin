@@ -12,7 +12,13 @@ export default function EditClientForm({ client, onClose }: EditClientFormProps)
   const [formData, setFormData] = useState({
     name: client.name,
     email: client.email,
-    phone: client.phone,
+    phone: client.phone || "",
+    passport_number: client.passport_number || "",
+    address: client.address || "",
+    deal_number: client.deal_number || "",
+    tariff: client.tariff || "",
+    rental_start_date: client.rental_start_date || "",
+    rental_end_date: client.rental_end_date || "",
   })
 
   const queryClient = useQueryClient()

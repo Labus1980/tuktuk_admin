@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { Link, useLocation } from 'react-router-dom'
 import { 
   HomeIcon, 
   UsersIcon, 
@@ -17,7 +16,7 @@ const navigation = [
 ]
 
 export default function Navigation() {
-  const pathname = usePathname()
+  const location = useLocation()
 
   return (
     <nav className="bg-white shadow-sm">
@@ -29,11 +28,11 @@ export default function Navigation() {
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               {navigation.map((item) => {
-                const isActive = pathname === item.href
+                const isActive = location.pathname === item.href
                 return (
                   <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
                       isActive
                         ? 'border-b-2 border-indigo-500 text-gray-900'
